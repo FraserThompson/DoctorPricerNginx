@@ -9,3 +9,5 @@ RUN apk add --update --no-cache openssl && \
 
 ENTRYPOINT [ "/docker-entrypoint.sh" ]
 CMD ["nginx", "-g", "daemon off;"]
+
+VOLUME ["/socks"]
