@@ -15,7 +15,7 @@ if [ "$ENV" == "staging"]; then
 
 else 
 
-    /usr/bin/certbot certonly --standalone -d scrapers.doctorpricer.co.nz
+    /usr/bin/certbot certonly --non-interactive --agree-tos --email doctorpricernz@gmail.com --standalone -d scrapers.doctorpricer.co.nz
 
 fi
 
