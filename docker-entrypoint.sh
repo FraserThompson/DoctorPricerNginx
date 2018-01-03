@@ -16,7 +16,7 @@ if [ "$ENV" == "staging" ]; then
 
 else 
 
-    if [ ! -d /etc/letsencrypt/live/scrapers.doctorpricer.co.nz ]; then
+    if [ ! -f /etc/letsencrypt/live/scrapers.doctorpricer.co.nz/fullchain.pem ]; then
         certbot-get
     fi
 
