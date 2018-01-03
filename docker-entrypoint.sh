@@ -1,6 +1,6 @@
 #! /bin/sh
 
-cd /etc/nginx/ssl/live/scrapers.doctorpricer.co.nz
+cd /etc/letsencrypt/live/scrapers.doctorpricer.co.nz
 PASS=$(openssl rand -base64 12)
 
 openssl genrsa -des3 -passout pass:${PASS}  -out server.pass.key 2048
