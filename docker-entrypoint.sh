@@ -1,15 +1,25 @@
 #! /bin/sh
 
-mkdir -p /etc/letsencrypt/live/scrapers.doctorpricer.co.nz
-cd /etc/letsencrypt/live/scrapers.doctorpricer.co.nz
-PASS=$(openssl rand -base64 12)
+if [ "$ENV" == "staging"]; then
 
-openssl genrsa -des3 -passout pass:${PASS}  -out server.pass.key 2048
-openssl rsa -passin pass:${PASS} -in server.pass.key -out privkey.pem
+    mkdir -p /etc/letsencrypt/live/scrapers.doctorpricer.co.nz
+    cd /etc/letsencrypt/live/scrapers.doctorpricer.co.nz
+    PASS=$(openssl rand -base64 12)
 
-rm server.pass.key
+    openssl genrsa -des3 -passout pass:${PASS}  -out server.pass.key 2048
+    openssl rsa -passin pass:${PASS} -in server.pass.key -out privkey.pem
 
-openssl req -new -key privkey.pem -out doctorpricer.co.nz.csr -subj "/C=NZ/ST=Otago/L=Dunedin/O=doctorpricer.co.nz/OU=IT Department/CN=*.doctorpricer.co.nz"
-openssl x509 -req -days 365 -in doctorpricer.co.nz.csr -signkey privkey.pem -out fullchain.pem
+    rm server.pass.key
+
+    openssl req -new -key privkey.pem -out doctorpricer.co.nz.csr -subj "/C=NZ/ST=Otago/L=Dunedin/O=doctorpricer.co.nz/OU=IT Department/CN=*.doctorpricer.co.nz"
+    openssl x509 -req -days 365 -in doctorpricer.co.nz.csr -signkey privkey.pem -out fullchain.pem
+
+else 
+
+    if [ ! -d /etc/letsencrypt/live/scrapers.doctorpricer.co.nz ]; then
+        certbot-get
+    fi
+
+fi
 
 exec "$@"
