@@ -15,11 +15,7 @@ if [ "$ENV" == "staging" ]; then
     openssl x509 -req -days 365 -in doctorpricer.co.nz.csr -signkey privkey.pem -out fullchain.pem
 
 else 
-
-    if [ ! -f /etc/letsencrypt/live/scrapers.doctorpricer.co.nz/fullchain.pem ]; then
-        certbot-get
-    fi
-
+    certbot-get
 fi
 
 exec "$@"
