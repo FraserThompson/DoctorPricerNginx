@@ -1,6 +1,6 @@
 #! /bin/sh
 
-if [ "$ENV" == "staging"]; then
+if [ "$ENV" == "staging" ]; then
 
     mkdir -p /etc/letsencrypt/live/scrapers.doctorpricer.co.nz
     cd /etc/letsencrypt/live/scrapers.doctorpricer.co.nz
