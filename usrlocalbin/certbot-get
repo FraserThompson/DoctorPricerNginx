@@ -1,0 +1,3 @@
+#! /bin/sh
+
+/usr/bin/certbot certonly --non-interactive --agree-tos --email doctorpricernz@gmail.com --standalone -d scrapers.doctorpricer.co.nz
