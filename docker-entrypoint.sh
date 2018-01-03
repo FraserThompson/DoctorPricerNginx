@@ -1,5 +1,6 @@
 #! /bin/sh
 
+mkdir -p /etc/letsencrypt/live/scrapers.doctorpricer.co.nz
 cd /etc/letsencrypt/live/scrapers.doctorpricer.co.nz
 PASS=$(openssl rand -base64 12)
 

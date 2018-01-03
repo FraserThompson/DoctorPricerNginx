@@ -5,7 +5,6 @@ COPY docker-entrypoint.sh /docker-entrypoint.sh
 COPY usrlocalbin /usr/local/bin
 
 RUN apk add --update --no-cache openssl certbot && \
-    mkdir -p /etc/letsencrypt/live/scrapers.doctorpricer.co.nz && \
     chmod +x /docker-entrypoint.sh && \
     chmod +x /usr/local/bin/certbot-get
 
