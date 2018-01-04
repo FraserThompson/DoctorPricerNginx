@@ -2,8 +2,8 @@
 
 if [ "$ENV" == "staging" ]; then
 
-    mkdir -p /etc/letsencrypt/live/scrapers.doctorpricer.co.nz
-    cd /etc/letsencrypt/live/scrapers.doctorpricer.co.nz
+    mkdir -p /etc/letsencrypt/live/api2.doctorpricer.co.nz
+    cd /etc/letsencrypt/live/api2.doctorpricer.co.nz
     PASS=$(openssl rand -base64 12)
 
     openssl genrsa -des3 -passout pass:${PASS}  -out server.pass.key 2048
@@ -16,7 +16,7 @@ if [ "$ENV" == "staging" ]; then
 
 else 
 
-    if [ ! -f /etc/letsencrypt/live/scrapers.doctorpricer.co.nz/fullchain.pem ]; then
+    if [ ! -f /etc/letsencrypt/live/api2.doctorpricer.co.nz/fullchain.pem ]; then
         certbot-get
     fi
 
