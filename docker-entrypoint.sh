@@ -1,5 +1,7 @@
 #! /bin/sh
 
+chown -R www-data:www-data /var/www/dp_server/assets
+
 if [ "$ENV" == "staging" ]; then
 
     mkdir -p /etc/letsencrypt/live/api2.doctorpricer.co.nz
