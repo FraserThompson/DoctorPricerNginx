@@ -1,6 +1,6 @@
 #! /bin/sh
 
-chown -R www-data:www-data /var/www/dp_server/assets
+chown -R www-data:varwwwusers /var/www/dp_server/assets
 
 if [ "$ENV" == "dev" ]; then
 

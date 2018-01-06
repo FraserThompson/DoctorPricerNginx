@@ -9,8 +9,10 @@ RUN apk add --update --no-cache openssl certbot && \
     chmod +x /usr/local/bin/certbot-get
 
 RUN set -x \
-	&& addgroup -g 33 -S www-data \
-	&& adduser -u 33 -D -S -G www-data www-data
+    && deluser xfs \
+    && addgroup -g 33 -S www-data \
+	&& addgroup -g 1000 -S varwwwusers \
+	&& adduser -u 33 -D -S -G varwwwusers www-data
 
 ENTRYPOINT [ "/docker-entrypoint.sh" ]
 CMD ["nginx", "-g", "daemon off;"]
