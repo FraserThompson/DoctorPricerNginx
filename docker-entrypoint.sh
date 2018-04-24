@@ -1,8 +1,6 @@
 #! /bin/sh
 
 chown -R www-data:varwwwusers /var/www/dp_server/assets
-mkdir -p /var/www/dp_server/assets/.well-known/acme-challenge
-touch /var/www/dp_server/assets/.well-known/acme-challenge/TYsyYAdTfS5jfN1kMnq1D364nN6VAtIYM59QR7-60OQ
 
 if [ "$ENV" == "dev" ]; then
 
