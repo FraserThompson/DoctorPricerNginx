@@ -1,6 +1,7 @@
 #! /bin/sh
 
-mkdir -p /etc/letsencrypt/live
-ls -l /etc/letsencrypt/live
+rm -r /etc/letsencrypt/live/api.doctorpricer.co.nz/
+rm -r /etc/letsencrypt/live/api.doctorpricer.co.nz-0001/
 
+/usr/bin/certbot certificates
 /usr/bin/certbot certonly --non-interactive --agree-tos --email doctorpricernz@gmail.com --standalone -d api.doctorpricer.co.nz
