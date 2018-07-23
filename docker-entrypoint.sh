@@ -18,10 +18,7 @@ if [ "$ENV" == "dev" ]; then
 
 else 
 
-    if [ ! -f /etc/letsencrypt/live/api.doctorpricer.co.nz/fullchain.pem ]; then
-        certbot-get
-        wait 10
-    fi
+    certbot-get
 
 fi
 

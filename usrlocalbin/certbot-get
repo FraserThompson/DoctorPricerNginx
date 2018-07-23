@@ -1,7 +1,9 @@
 #! /bin/sh
 
-rm -r /etc/letsencrypt/live/api.doctorpricer.co.nz/
-rm -r /etc/letsencrypt/live/api.doctorpricer.co.nz-0001/
+rm -r /etc/letsencrypt/live/api.doctorpricer.co.nz-0002
+rm /etc/letsencrypt/renewal/api.doctorpricer.co.nz.conf
+rm /etc/letsencrypt/renewal/api.doctorpricer.co.nz-0001.conf
+rm /etc/letsencrypt/renewal/api.doctorpricer.co.nz-0002.conf
 
 /usr/bin/certbot certificates
 /usr/bin/certbot certonly --non-interactive --agree-tos --email doctorpricernz@gmail.com --standalone -d api.doctorpricer.co.nz
