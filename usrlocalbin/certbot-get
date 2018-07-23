@@ -1,4 +1,4 @@
 #! /bin/sh
 
 /usr/bin/certbot certificates
-/usr/bin/certbot certonly --non-interactive --agree-tos --email doctorpricernz@gmail.com --standalone -d api.doctorpricer.co.nz
+/usr/bin/certbot certonly --non-interactive --agree-tos --email doctorpricernz@gmail.com --standalone -d api2.doctorpricer.co.nz
