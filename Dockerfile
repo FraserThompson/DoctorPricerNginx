@@ -6,7 +6,8 @@ COPY usrlocalbin /usr/local/bin
 
 RUN apk add --update --no-cache openssl certbot && \
     chmod +x /docker-entrypoint.sh && \
-    chmod +x /usr/local/bin/certbot-get
+    chmod +x /usr/local/bin/certbot-get && \
+    chmod +x /usr/local/bin/certbot-renew
 
 RUN set -x \
     && deluser xfs \
