@@ -1,0 +1,5 @@
+{
+    "scripts": {
+        "docker-push": "docker build -t fraserthompson/doctorpricernginx . && docker push fraserthompson/doctorpricernginx"
+    }
+}
