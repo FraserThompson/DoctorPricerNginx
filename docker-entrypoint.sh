@@ -18,8 +18,8 @@ if [ "$ENV" == "dev" ]; then
 
 else 
 
-    certbot-get # this will do nothing if we already have one
-    certbot-renew # this will check if it needs to be renewed and renew it if so
+    certbot certonly --keep-until-expiring --non-interactive --agree-tos --email doctorpricernz@gmail.com --standalone -d api.doctorpricer.co.nz
+    certbot renew
 
 fi
 

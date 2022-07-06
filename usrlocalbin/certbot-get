@@ -1,7 +1,0 @@
-#! /bin/sh
-
-/usr/bin/certbot certificates
-
-if [ ! -f /etc/letsencrypt/live/api.doctorpricer.co.nz/fullchain.pem ]; then
-    /usr/bin/certbot certonly --non-interactive --agree-tos --email doctorpricernz@gmail.com --standalone -d api.doctorpricer.co.nz
-fi
